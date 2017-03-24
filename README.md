@@ -1,2 +1,1 @@
-# DynCohNetVis.github.io
-DynCohNetVis
+# jichengtao.github.io
