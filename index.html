@@ -641,7 +641,7 @@ function drawBrainDiagram()
 	var text = brainSvg.append("g")
 	   .attr("class", "dynFuLegendButton" )
 		.attr("id", "dynFuLegendButton")
-		.append("text").attr("x", 80).attr("y", height/4-20).text("DDDD")
+		.append("text").attr("x", 80).attr("y", height/4-20).text("DDDD").style("font-size", "25px").style("fill", "black")	
 		.append("rect")
 		.attr("x", 80)
 		.attr("y", height/4-20)
@@ -663,31 +663,7 @@ function drawBrainDiagram()
 					redraw();				  
 				}
 			})
-	brainSvg.append("g")
-	   .attr("class", "dynFuLegendButton polygons " )
-		.attr("id", "dynFuLegendButtonText")
-		.append("text")
-		.attr("x", 50)
-		.attr("y", height/4-30)
-		.attr("fill", "black")
-		.on("click", function() {
-				partialFuOn = !partialFuOn; 
-				if(partialFuOn)
-				{
-					$("#brainsvg").empty();
-					$("#timelineRep").empty();
-					redraw();	
-				}
-				else
-				{
-					$("#brainsvg").empty();	
-					$("#timelineRep").empty();								
-					redraw();				  
-				}
-			})		
-		.text("ChangeRepresentation")	
-		.style("font-size", "25px")
-		.style("fill", "black")	
+
 	//Inner cell
 	var polygonBrainOuter = brainSvg.append("g")
 	     .attr("class", "polygons")
