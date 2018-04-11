@@ -6,6 +6,16 @@
 	 fill: none;
 	 stroke: #000;
  }
+	
+.dynFuLegendButton {
+	height: 150px;
+	width: 150px;
+	background-color:#0074;
+	border-radius: 30px;
+	margin-bottom: 30px;
+	float: left;
+	margin-right: 20px;
+}
 </style>
 
 <body>
@@ -647,7 +657,7 @@ function drawBrainDiagram()
 		.attr("y", height/4-20)
 		.attr("width", 80)
 		.attr("height", 40)
-		//.attr("fill", "red")
+		.attr("fill", "red")
 		.on("click", function() {
 				partialFuOn = !partialFuOn; 
 				if(partialFuOn)
