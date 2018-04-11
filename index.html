@@ -6,44 +6,6 @@
 	 fill: none;
 	 stroke: #000;
  }
-
-.dynFuLegendButton rect {
-  stroke: #999faa; /* navy 40% */
-  stroke-width: 2px;
-}
-
-.dynFuLegendButton rect.pressed {
-  fill: #000f2b; /* navy 100% */
-}
-
-.dynFuLegendButton #gradient-start {
-  stop-color: #999faa; /* navy 40% */
-  stop-opacity: 1;
-}
-
-.dynFuLegendButton #gradient-stop {
-  stop-color: #4d576b; /* navy 70% */
-  stop-opacity: 1;
-}
-
-.dynFuLegendButton #gradient-start.active, .button #gradient-start.pressed {
-  stop-color: #4d576b; /* navy 70% */
-}
-
-.dynFuLegendButton #gradient-stop.active, .button #gradient-stop.pressed {
-  stop-color: #000f2b; /* navy 100% */
-}
-
-.dynFuLegendButton text {
-  font-size: 30px;
-  fill: #eee;
-  pointer-events: none;
-  text-anchor: middle;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
 </style>
 
 <body>
@@ -685,7 +647,7 @@ function drawBrainDiagram()
 		.attr("y", height/4-20)
 		.attr("width", 80)
 		.attr("height", 40)
-		.attr("fill", "red")
+		//.attr("fill", "red")
 		.on("click", function() {
 				partialFuOn = !partialFuOn; 
 				if(partialFuOn)
