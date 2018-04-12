@@ -202,17 +202,18 @@ function redraw() {
     	.scale(x)
 	.orient("bottom")
 	.tickSize(0-width)
+	.fill('none')
     	.tickPadding(8)
-	    .ticks(xscaleticks);
+	.ticks(xscaleticks);
     
     svg.append("svg:g")
-	    .attr("class", "x axis");
+	.attr("class", "x axis");
 	//create and draw the y axis                  
 	var yAxis = d3.svg.axis()
     	.scale(y)
 	.orient("left")
     	.tickSize(0-width)
-	 .tickPadding(8);
+	.tickPadding(8);
     
     svg.append("svg:g")
     	.attr("class", "y axis");
