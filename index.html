@@ -200,24 +200,24 @@ function redraw() {
     	.on("zoom", zoomed);
 	//call the zoom on the SVG
    svg.call(zoom);
+	
 	//create and draw the x axis
 	var xAxis = d3.svg.axis()
     	.scale(x)
 	.orient("bottom")
 	.tickSize(0-width)	
     	.tickPadding(8)
-	//.ticks(xscaleticks);
-	
-    
+	.ticks(xscaleticks);    
     svg.append("svg:g")
 	.attr("class", "x axis");
+	
 	//create and draw the y axis                  
 	var yAxis = d3.svg.axis()
     	.scale(y)
 	.orient("left")
     	.tickSize(0-width)
-	.tickPadding(8);
-    
+	.tickPadding(8)
+	.ticks(xscaleticks);    
     svg.append("svg:g")
     	.attr("class", "y axis");
 /****************************************************************************************************************/
