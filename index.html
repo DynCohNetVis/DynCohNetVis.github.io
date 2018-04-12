@@ -678,7 +678,7 @@ function drawBrainDiagram()
 					redraw();				  
 				}
 			})
-		textButton.append('text').text('ChangeRepresentation')
+		textButton.append('text').text( function() { return  partialFuOn? 'NorRep':'AugRep';} )
 			.attr('x', 80).attr('y', height/4+35)
 			.attr('fill', 'white')
 			.attr('font-size', '25')
