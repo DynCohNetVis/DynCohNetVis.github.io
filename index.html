@@ -664,7 +664,7 @@ function drawBrainDiagram()
 		.attr("rx", 10)
 		.attr("ry", 10)
 		.attr("stroke", "white")
-		.attr("stroke-width", '4px')
+		.attr("stroke-width", '5px')
 		.attr('fill', 'url(#grad)')
 		.on("click", function() {
 				partialFuOn = !partialFuOn; 
@@ -682,7 +682,7 @@ function drawBrainDiagram()
 				}
 			})
 		textButton.append('text').text( function() { return  partialFuOn? 'AugRep':'NorRep';} )
-			.attr('x', 130).attr('y', height/4+32)
+			.attr('x', 120).attr('y', height/4+32)
 			.attr('fill', 'white')
 			.attr('font-size', '30')
 			//.attr('text-anchor', 'middle')
