@@ -662,7 +662,7 @@ function drawBrainDiagram()
 		 .attr('stop-opacity', '1') 
 	shadow = shapeShadow.append('filter').attr("id", 'shadowFilter')
 		.attr('x', '0').attr('y', '0')
-	shadow.append('feOffset').attr('result', 'offOut').attr('in', 'SourceGraphic').attr('dx', '10').attr('dy', '5')
+	shadow.append('feOffset').attr('result', 'offOut').attr('in', 'SourceGraphic').attr('dx', '3').attr('dy', '3')
 	shadow.append('feGaussianBlur').attr('result', 'blurOut').attr('in', 'offOut').attr('stdDeviation', '10')
 	shadow.append('feBlend').attr('in', 'SourceGraphic').attr('in2', 'blurOut').attr('mode', 'normal')
 	
