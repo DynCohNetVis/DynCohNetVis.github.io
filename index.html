@@ -688,7 +688,7 @@ function drawBrainDiagram()
 					redraw();				  
 				}
 			})
-	textButton.append('text').text( 'Clik Here' )
+	textButton.append('text').text( 'Click Here' )
 		.attr('x', 95).attr('y', height/4-5)
 		.attr('fill', 'white')
 		.attr('font-size', '30')
@@ -710,7 +710,8 @@ function drawBrainDiagram()
 		})
 	
 	textButton.append('text').text( function() { return  partialFuOn? 'Augmented Representation':'Normal Representation';} )
-			.attr('x', 40).attr('y', height/4+50)
+			.attr('x', function(){ return partialFuOn? 40:45;})
+			.attr('y', height/4+50)
 			.attr('fill', 'green')
 			.attr('font-size', '18')
 			.attr('font-family', 'Verdana')	
