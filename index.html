@@ -640,9 +640,8 @@ function drawBrainDiagram()
 			.style("text-anchor", "start");
 	brainSvg.append("g").append("text")
 	        .attr("x", width/3-80).attr("y", 20)
-			.text("ANTERIOR")
-			.style("font-family", "Verdana")
-			.style("text-anchor", "start");
+		.text("ANTERIOR")
+		.style("font-family", "Verdana").style("text-anchor", "start");
 	var textButton = brainSvg.append("g")
 	   .attr("class", "dynFuLegendButtonSty" )
 	   .attr("id", "dynFuLegendButton")
@@ -689,11 +688,11 @@ function drawBrainDiagram()
 					redraw();				  
 				}
 			})
+	
 	textButton.append('text').text( function() { return  partialFuOn? 'NorRep':'AugRep';} )
-			.attr('x', 100).attr('y', height/4-10)
+			.attr('x', 100).attr('y', height/4+10)
 			.attr('fill', 'white')
 			.attr('font-size', '30')
-			//.attr('text-anchor', 'middle')
 			.attr('font-family', 'Verdana')
 			.on("click", function() {
 				partialFuOn = !partialFuOn; 
