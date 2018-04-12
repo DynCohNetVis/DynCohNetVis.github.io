@@ -195,9 +195,8 @@ function redraw() {
 		.y(function(d) { return y(d.y); });	
 	//define the zoom
 	var zoom = d3.behavior.zoom()
-    	.x(x)
-	    .y(y)
-	    .scaleExtent([1, 8])
+    	.x(x).y(y)
+	.scaleExtent([1, 8])
     	.on("zoom", zoomed);
 	//call the zoom on the SVG
    svg.call(zoom);
@@ -366,7 +365,7 @@ function redraw() {
     	.call(yAxis);   
           
     d3.transition(svg).select(".x.axis")
-    	.attr("transform", "translate(0," + height + ")")
+    	//.attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 	//define the zoom function
 	function zoomed() { 
