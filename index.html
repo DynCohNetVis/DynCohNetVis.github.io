@@ -688,28 +688,32 @@ function drawBrainDiagram()
 					redraw();				  
 				}
 			})
+	textButton.append('text').text( 'Clik Here' )
+		.attr('x', 100).attr('y', height/4-10)
+		.attr('fill', 'white')
+		.attr('font-size', '30')
+		.attr('font-family', 'Verdana')
+		.on("click", function() {
+			partialFuOn = !partialFuOn; 
+			if(partialFuOn)
+			{
+				$("#brainsvg").empty();
+				$("#timelineRep").empty();
+				redraw();	
+			}
+			else
+			{
+				$("#brainsvg").empty();	
+				$("#timelineRep").empty();								
+				redraw();				  
+			}
+		})
 	
-	textButton.append('text').text( function() { return  partialFuOn? 'NorRep':'AugRep';} )
-			.attr('x', 100).attr('y', height/4+10)
+	textButton.append('text').text( function() { return  partialFuOn? 'Normal Representation':'Augmented Representation';} )
+			.attr('x', 100).attr('y', height/4+30)
 			.attr('fill', 'white')
 			.attr('font-size', '30')
-			.attr('font-family', 'Verdana')
-			.on("click", function() {
-				partialFuOn = !partialFuOn; 
-				if(partialFuOn)
-				{
-					$("#brainsvg").empty();
-					$("#timelineRep").empty();
-					redraw();	
-				}
-				else
-				{
-					$("#brainsvg").empty();	
-					$("#timelineRep").empty();								
-					redraw();				  
-				}
-			})
-	
+			.attr('font-family', 'Verdana')	
 
 	//Inner cell
 	var polygonBrainOuter = brainSvg.append("g")
