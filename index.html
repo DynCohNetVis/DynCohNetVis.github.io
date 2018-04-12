@@ -1463,7 +1463,7 @@ function createDynFuLegend()
 	var dynFuLegHeight = (height/2);
 	
 	dynFuRad = d3.min([dynFuLegWidth/dynFuNum, dynFuLegHeight]);
-	dynFuRad = (dynFuRad-1)/2; 
+	dynFuRad = (dynFuRad-5)/2; 
 	brainSvg.append("g").selectAll("circle")
 	   .data(dynFuLegendInfo)
 	   .enter().append("circle")	   
