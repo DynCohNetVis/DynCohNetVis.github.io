@@ -6,6 +6,10 @@
 	 fill: none;
 	 stroke: #000;
  }
+
+.x.axis path {
+  display: none;
+}
 </style>
 
 <body>
@@ -201,8 +205,7 @@ function redraw() {
 	var xAxis = d3.svg.axis()
     	.scale(x)
 	.orient("bottom")
-	.tickSize(0-width)
-	.fill('none')
+	.tickSize(0-width)	
     	.tickPadding(8)
 	.ticks(xscaleticks);
     
