@@ -665,7 +665,7 @@ function drawBrainDiagram()
 	shapeDown.append('stop').attr('id', 'augprestart').attr('offset', '0%').attr('stop-color', "#4d576b").attr('stop-opacity', '1')
 	shapeDown.append('stop').attr('id', 'augdprestop').attr('offset', '100%').attr('stop-color', "#000f2b").attr('stop-opacity', '1')	
 	textButton.append("rect")
-		.attr("class", "dynFuLegendButtonSty1" )
+		.attr("id", "dynFuLegendButtonSty1" )
 		.attr("x", 50)
 		.attr("y", height/4-40)
 		.attr("height", 40)
@@ -680,6 +680,8 @@ function drawBrainDiagram()
 				if (!partialFuOn)
 				{
 					partialFuOn = true; 
+					$("#dynFuLegendButtonSty1").attr('fill', 'url(gradDown)')
+					$("#dynFuLegendButtonSty2").attr('fill', 'url(gradUp)')
 					$("#brainsvg").empty();
 					$("#timelineRep").empty();
 					redraw();					
@@ -705,7 +707,7 @@ function drawBrainDiagram()
 		})
 	
 	var NorButton = brainSvg.append("g")
-	   .attr("class", "dynFuLegendButtonSty2" )
+	   .attr("id", "dynFuLegendButtonSty2" )
 	   .attr("id", "dynFuLegendButton")
 	   .attr('height', 40).attr('width', 100)
 	   .attr("x", 180).attr('y', height/4-40)		
