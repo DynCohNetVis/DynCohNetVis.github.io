@@ -735,7 +735,7 @@ function drawBrainDiagram()
 		.attr("stroke", "#999faa")
 		.attr("stroke-width", '2px')
 		.attr('filter', 'url(#shadowFilter)')
-		.attr('fill', fuction() { return partialFuOn? 'url(#gradUp)':'url(#gradDown)';})		
+		.attr('fill', function() { return partialFuOn? 'url(#gradUp)':'url(#gradDown)';})		
 		.on("click", function() {
 			if (partialFuOn)
 			{
