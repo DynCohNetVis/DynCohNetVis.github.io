@@ -673,10 +673,15 @@ function drawBrainDiagram()
 		.attr('filter', 'url(#shadowFilter)')
 		.attr('fill', 'url(#grad)')		
 		.on("click", function() {
-				partialFuOn = true; 
-				$("#brainsvg").empty();
-				$("#timelineRep").empty();
-				redraw();
+				if (!partialFuOn)
+				{
+					partialFuOn = true; 
+					$("#brainsvg").empty();
+					$("#timelineRep").empty();
+					redraw();
+				}
+				else
+				{return;}
 			})
 	textButton.append('text').text( 'AugRep' )
 		.attr('x', 62).attr('y', height/4-15)
@@ -684,10 +689,15 @@ function drawBrainDiagram()
 		.attr('font-size', '20')
 		.attr('font-family', 'Verdana')
 		.on("click", function() {
-			partialFuOn = true; 
-			$("#brainsvg").empty();
-			$("#timelineRep").empty();
-			redraw();
+			if (!partialFuOn)
+			{
+				partialFuOn = true; 
+				$("#brainsvg").empty();
+				$("#timelineRep").empty();
+				redraw();
+			}
+			else
+			{return;}
 		})
 	
 	var NorButton = brainSvg.append("g")
@@ -720,21 +730,32 @@ function drawBrainDiagram()
 		.attr('filter', 'url(#shadowFilter)')
 		.attr('fill', 'url(#grad)')		
 		.on("click", function() {
-				partialFuOn = false;
-				$("#brainsvg").empty();	
-				$("#timelineRep").empty();								
-				redraw();	  			
-			})
+			if (partialFuOn)
+			{
+				partialFuOn = false; 
+				$("#brainsvg").empty();
+				$("#timelineRep").empty();
+				redraw();
+			}
+			else
+			{return;}	  			
+		})
 	textButton.append('text').text( 'NorRep' )
 		.attr('x', 192).attr('y', height/4-15)
 		.attr('fill', 'white')
 		.attr('font-size', '20')
 		.attr('font-family', 'Verdana')
 		.on("click", function() {
-			partialFuOn = false; 
-			$("#brainsvg").empty();	
-			$("#timelineRep").empty();								
-			redraw();			  
+			if (partialFuOn)
+			{
+				partialFuOn = false; 
+				$("#brainsvg").empty();
+				$("#timelineRep").empty();
+				redraw();
+			}
+			else
+			{return;}	  			
+			})			  
 		})
 	///////////////////////////////////////////
 
