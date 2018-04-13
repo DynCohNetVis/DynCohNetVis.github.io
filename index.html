@@ -658,8 +658,8 @@ function drawBrainDiagram()
 		merge.append('feMergeNode').attr('in', 'SourceGraphic')
 	shape = shapeShadow.append('linearGradient').attr("id", 'grad')
 		.attr('x1', '0%').attr('y1', '0%').attr('x2', '0%').attr('y2', '100%')		
-	shape.append('stop').attr('id', 'gradprestart').attr('offset', '0%').attr('stop-color', "#999faa").attr('stop-opacity', '1')
-	shape.append('stop').attr('id', 'gradprestop').attr('offset', '100%').attr('stop-color', "#4d576b").attr('stop-opacity', '1')		
+	shape.append('stop').attr('id', 'augprestart').attr('offset', '0%').attr('stop-color', "#999faa").attr('stop-opacity', '1')
+	shape.append('stop').attr('id', 'augdprestop').attr('offset', '100%').attr('stop-color', "#4d576b").attr('stop-opacity', '1')		
 	textButton.append("rect")
 		.attr("class", "dynFuLegendButtonSty" )
 		.attr("x", 50)
@@ -678,8 +678,9 @@ function drawBrainDiagram()
 					partialFuOn = true; 
 					$("#brainsvg").empty();
 					$("#timelineRep").empty();
-					redraw();
-					//d3.select('linearGradient').select('')
+					d3.selectAll('augprestart').attr('stop-color', '#4d576b')
+					d3.selectAll('augprestart').attr('stop-color', '#000f2b')
+					redraw();					
 				}
 				else
 				{return;}
