@@ -743,7 +743,8 @@ function drawBrainDiagram()
 			if (partialFuOn)
 			{
 				partialFuOn = false; 
-				d3.selectAll(".dynFuLegendButtonSty2").attr('fill', 'url(#gradDown)')
+				$("#dynFuLegendButtonSty2").attr('fill', 'url(gradDown)')
+				$("#dynFuLegendButtonSty1").attr('fill', 'url(gradUp)')
 				$("#brainsvg").empty();
 				$("#timelineRep").empty();
 				redraw();
