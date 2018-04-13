@@ -707,6 +707,71 @@ function drawBrainDiagram()
 				redraw();				  
 			}
 		})
+	
+	var NorButton = brainSvg.append("g")
+	   .attr("class", "dynFuLegendButtonSty" )
+	   .attr("id", "dynFuLegendButton")
+	   .attr('height', 45).attr('width', 100)
+	   .attr("x", 120).attr('y', height/4-50)		
+	shapeShadow = NorButton.append('defs') 
+	shadow = shapeShadow.append('filter').attr("id", 'shadowFilter')
+		.attr('x', 0).attr('y', '0').attr('width', 202).attr('height', 94)	
+	shadow.append('feGaussianBlur').attr('in', 'SourceAlpha').attr('stdDeviation', '2')
+	shadow.append('feOffset').attr('dx', 2).attr('dy', 4)
+	var merge = shadow.append('feMerge')
+		merge.append('feMergeNode')
+		merge.append('feMergeNode').attr('in', 'SourceGraphic')
+	shape = shapeShadow.append('linearGradient').attr("id", 'grad')
+		.attr('x1', '0%').attr('y1', '0%').attr('x2', '0%').attr('y2', '100%')		
+	shape.append('stop').attr('offsest', '0%').attr('stop-color', "#999faa").attr('stop-opacity', '1')
+	shape.append('stop').attr('offset', '100%').attr('stop-color', "#4d576b").attr('stop-opacity', '1')		
+	textButton.append("rect")
+		.attr("class", "dynFuLegendButtonSty" )
+		.attr("x", 125)
+		.attr("y", height/4-50)
+		.attr("width", 90)
+		.attr("height", 40)
+		.attr("rx", 5)
+		.attr("ry", 5)
+		.attr("stroke", "#999faa")
+		.attr("stroke-width", '2px')
+		.attr('fill', 'url(#grad)')
+		.attr('filter', 'url(#shadowFilter)')
+		.on("click", function() {
+				partialFuOn = !partialFuOn; 
+				if(partialFuOn)
+				{
+					$("#brainsvg").empty();
+					$("#timelineRep").empty();
+					redraw();	
+				}
+				else
+				{
+					$("#brainsvg").empty();	
+					$("#timelineRep").empty();								
+					redraw();				  
+				}
+			})
+	textButton.append('text').text( 'NorRep' )
+		.attr('x', 125).attr('y', height/4-20)
+		.attr('fill', 'white')
+		.attr('font-size', '20')
+		.attr('font-family', 'Verdana')
+		.on("click", function() {
+			partialFuOn = !partialFuOn; 
+			if(partialFuOn)
+			{
+				$("#brainsvg").empty();
+				$("#timelineRep").empty();
+				redraw();	
+			}
+			else
+			{
+				$("#brainsvg").empty();	
+				$("#timelineRep").empty();								
+				redraw();				  
+			}
+		})
 	///////////////////////////////////////////
 
 	//Inner cell
