@@ -675,13 +675,11 @@ function drawBrainDiagram()
 		.attr("stroke", "#999faa")
 		.attr("stroke-width", '2px')
 		.attr('filter', 'url(#shadowFilter)')
-		.attr('fill', 'url(#gradDown)')		
+		.attr('fill', function () {return partialFuOn? 'url(#gradDown)' : 'url(#gradDown)';})		
 		.on("click", function() {
 				if (!partialFuOn)
 				{
 					partialFuOn = true; 
-					$("#dynFuLegendButtonSty1").attr('fill', 'url(#gradDown)')
-					$("#dynFuLegendButtonSty2").attr('fill', 'url(#gradUp)')
 					$("#brainsvg").empty();
 					$("#timelineRep").empty();
 					redraw();					
@@ -707,7 +705,6 @@ function drawBrainDiagram()
 		})
 	
 	var NorButton = brainSvg.append("g")
-	   .attr("id", "dynFuLegendButtonSty2" )
 	   .attr("id", "dynFuLegendButton")
 	   .attr('height', 40).attr('width', 100)
 	   .attr("x", 180).attr('y', height/4-40)		
@@ -728,7 +725,7 @@ function drawBrainDiagram()
 	shapeDown.append('stop').attr('id', 'augprestart').attr('offset', '0%').attr('stop-color', "#4d576b").attr('stop-opacity', '1')
 	shapeDown.append('stop').attr('id', 'augdprestop').attr('offset', '100%').attr('stop-color', "#000f2b").attr('stop-opacity', '1')		
 	NorButton.append("rect")
-		.attr("class", "dynFuLegendButtonSty2" )
+		.attr("id", "dynFuLegendButtonSty2" )
 		.attr("x", 180)
 		.attr("y", height/4-40)
 		.attr("width", 100)
@@ -738,13 +735,11 @@ function drawBrainDiagram()
 		.attr("stroke", "#999faa")
 		.attr("stroke-width", '2px')
 		.attr('filter', 'url(#shadowFilter)')
-		.attr('fill', 'url(#gradUp)')		
+		.attr('fill', fuction() { return partialFuOn? 'url(#gradUp)' :'url(#gradDown)';)		
 		.on("click", function() {
 			if (partialFuOn)
 			{
 				partialFuOn = false; 
-				$("#dynFuLegendButtonSty2").attr('fill', 'url(#gradDown)')
-				$("#dynFuLegendButtonSty1").attr('fill', 'url(#gradUp)')
 				$("#brainsvg").empty();
 				$("#timelineRep").empty();
 				redraw();
