@@ -1350,7 +1350,7 @@ function createTimeLegend()
 	   .attr("y", height+40)
 	   .filter(function(d) {return d.type=="straight"? true:false;})
 	   .text(function(d, i) { return "t = " + (parseFloat(d.timestep)+1);})
-	   .attr('font-size', 30)
+	   .attr('font-size', 20)
 	   .style("font-family", "Verdana")	
 	   //.style("text-anchor", "start");	
 }
