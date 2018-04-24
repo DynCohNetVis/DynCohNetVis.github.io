@@ -1218,7 +1218,12 @@ function createTimeLegend()
 						d3.selectAll(selectDynFuLegend)
 						  .style("opacity", function(d) { return (parseFloat(curLine.dynFu) == parseFloat(d.Indx))? 1:0.15;});*/
 						return curLine.color.dynFu; 
-						});					
+						});	
+					
+					var selectRoiLgend = (".roiLegend");
+				  	d3.selectAll(selectRoiLgend)
+						.filter(function(curRoiLegend) {return (curRoiLegend.roiIndx == d.roiIndx)? false:true; })
+						.style("opacity", 0.15);
 				}				  		  
 			 }
 			 else
