@@ -1569,7 +1569,14 @@ function createDynFuLegend()
 			d3.selectAll(selectTimeline)
 			  .filter( function(curLine) { return (parseFloat(curLine.dynFu) == parseFloat(curDynFu))&&(curLine.type!="voronoi")? true:false ; })
 			  .selectAll("path")
-			  .style("stroke-width", "5px");				  
+			  .style("stroke-width", "5px");
+			
+			var selectRoiLegend = (".roiLegend");
+			d3.selectAll(selectRoiLegend).
+			   .filterf(function(curRoiLegend) {return (curRoiLegend.roiIndx == d.roiIndx)? false:true;} )
+			   .style("opacity", 1);
+		
+		
 		  })
 		 .on("mouseout", function(d, i) {
 					var curDynFu = d.Indx; 
