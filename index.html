@@ -1572,8 +1572,7 @@ function createDynFuLegend()
 			  .style("stroke-width", "5px");
 			
 			var selectRoiLegend = (".roiLegend");
-			d3.selectAll(selectRoiLegend).
-			   .filter(function(curRoiLegend) {return (curRoiLegend.roiIndx == d.roiIndx)? false:true;} )
+			d3.selectAll(selectRoiLegend)
 			   .style("opacity", 1);
 		
 		
