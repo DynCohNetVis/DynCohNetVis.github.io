@@ -1195,7 +1195,12 @@ function createTimeLegend()
 
 					d3.selectAll(selectTimeline)
 					.selectAll("path")
-					.style("stroke", function(curLine) { return curLine.color.dynFu;});				
+					.style("stroke", function(curLine) { return curLine.color.dynFu;});	
+					
+					var selectRoiLgend = (".roiLegend");
+				  	d3.selectAll(selectRoiLgend)
+						.filter(function(curRoiLegend) {return (curRoiLegend.roiIndx == d.roiIndx)? false:true; })
+						.style("opacity", 0.15);
 				}
 				else
 				{
