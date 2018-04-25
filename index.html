@@ -1312,7 +1312,11 @@ function createTimeLegend()
 							}
 							else
 							{return curLine.color.roi; }						  
-					  });				  		  
+					  });	
+				 
+				 var selectRoiLgend = (".roiLegend");
+				  d3.selectAll(selectRoiLgend)
+					.style("opacity", 1);
 			 }
 			 else
 			 {
