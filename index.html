@@ -1315,7 +1315,7 @@ function createTimeLegend()
 					  });	
 				 
 				 var selectRoiLgend = (".roiLegend");
-				  d3.selectAll(selectRoiLgend)
+				 d3.selectAll(selectRoiLgend)
 					.style("opacity", 1);
 			 }
 			 else
@@ -1348,7 +1348,11 @@ function createTimeLegend()
 					  { return (d.type=="voronoi")? "black":d.color.roi; }
 					  else
 					  {return d.color.roi;}
-					});	  				 
+					});
+				 
+				 var selectRoiLgend = (".roiLegend");
+				 d3.selectAll(selectRoiLgend)
+					.style("opacity", 1);
 			 }
 	});
 	//set text
