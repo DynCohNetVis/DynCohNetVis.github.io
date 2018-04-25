@@ -1284,6 +1284,10 @@ function createTimeLegend()
 					.selectAll("path")
 					.style("stroke", function(d) { return d.color.dynFu; } );
 				}
+				 
+				 var selectRoiLgend = (".roiLegend");
+				  d3.selectAll(selectRoiLgend)
+				     .style("opacity", 0.15);
 	  				 
 			 }
 		 })
